@@ -245,6 +245,10 @@
   height: var(--lemmo-size-control-sm, 2.25rem);
   color: var(--lemmo-text-primary, #e1e1e3);
   border-radius: var(--lemmo-radius-control, 0.5rem);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
   transition: background-color var(--lemmo-duration-fast, 100ms) var(--lemmo-ease-out, ease-out);
 }
 
@@ -265,6 +269,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  height: calc(100dvh - var(--lemmo-size-header, 3.75rem));
   background: rgba(15, 17, 19, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -273,8 +278,15 @@
   flex-direction: column;
   gap: var(--lemmo-space-500, 1.25rem);
   overflow-y: auto;
+  overscroll-behavior: contain;
   z-index: 99;
   animation: slideDown 200ms var(--lemmo-ease-out, ease-out);
+}
+
+@media (min-width: 64rem) {
+  .mobileDrawer {
+    display: none;
+  }
 }
 
 @keyframes slideDown {
@@ -301,6 +313,34 @@
   letter-spacing: 0.05em;
   color: var(--lemmo-text-faint, #737475);
   padding: 0 var(--lemmo-space-200, 0.5rem);
+}
+
+.mobileAccordionToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--lemmo-space-100, 0.25rem) var(--lemmo-space-200, 0.5rem);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--lemmo-radius-control, 0.5rem);
+  transition: background-color var(--lemmo-duration-fast, 100ms) var(--lemmo-ease-out, ease-out);
+}
+
+.mobileAccordionToggle:hover {
+  background-color: var(--lemmo-border-subtle, rgba(255, 255, 255, 0.06));
+}
+
+.mobileAccordionToggle .mobileNavTitle {
+  padding: 0;
+}
+
+.mobileSubNavGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lemmo-space-100, 0.25rem);
+  padding-left: var(--lemmo-space-200, 0.5rem);
 }
 
 .mobileNavLink {
@@ -332,6 +372,26 @@
   gap: var(--lemmo-space-300, 0.75rem);
   margin-top: auto;
   padding-top: var(--lemmo-space-400, 1rem);
+}
+
+.mobileSignInBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--lemmo-space-250, 0.625rem);
+  font-family: var(--font-body, 'Satoshi', sans-serif);
+  font-size: var(--lemmo-type-size-200, 0.875rem);
+  font-weight: var(--lemmo-font-weight-medium, 500);
+  color: var(--lemmo-text-primary, #e1e1e3);
+  border: 1px solid var(--lemmo-border-default, rgba(255, 255, 255, 0.12));
+  border-radius: var(--lemmo-radius-pill, 9999px);
+  text-decoration: none;
+  transition: background-color var(--lemmo-duration-fast, 100ms) var(--lemmo-ease-out, ease-out);
+}
+
+.mobileSignInBtn:hover {
+  background-color: var(--lemmo-border-subtle, rgba(255, 255, 255, 0.06));
 }
 
 .mobileCtaBtn {
