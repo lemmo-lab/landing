@@ -1,0 +1,114 @@
+.footer {
+  background: var(--lemu-color-surface-tertiary);
+  border-top: var(--lemu-stroke-default) solid var(--lemu-color-border-subtle);
+  padding: var(--lemu-space-1200) var(--lemu-space-400) var(--lemu-space-800);
+}
+
+.footerContainer {
+  max-width: var(--lemu-bp-xl);
+  margin: 0 auto;
+}
+
+.topGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--lemu-gap-section-sm);
+  margin-bottom: var(--lemu-space-1200);
+}
+
+@media (min-width: 900px) {
+  .topGrid {
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: var(--lemu-gap-4);
+  }
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lemu-gap-3);
+  max-width: 320px;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: var(--lemu-gap-2);
+  color: var(--lemu-color-font-primary);
+  font-family: var(--font-heading);
+  font-weight: var(--lemu-font-weight-bold);
+  font-size: var(--lemu-type-size-400);
+  text-decoration: none;
+}
+
+.brandIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--lemu-radius-150);
+  background: var(--lemu-color-surface-brand);
+  color: var(--lemu-color-font-on-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--lemu-font-weight-black);
+  font-size: var(--lemu-type-size-200);
+}
+
+.brandMotto {
+  font-size: var(--lemu-type-size-200);
+  color: var(--lemu-color-font-secondary);
+  line-height: 1.5;
+}
+
+.linkCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lemu-gap-2-5);
+}
+
+.colHeading {
+  font-family: var(--font-heading);
+  font-size: var(--lemu-type-size-200);
+  font-weight: var(--lemu-font-weight-semi-bold);
+  color: var(--lemu-color-font-primary);
+  letter-spacing: var(--lemu-type-track-wide);
+  margin-bottom: var(--lemu-space-100);
+}
+
+.footerLink {
+  color: var(--lemu-color-font-secondary);
+  text-decoration: none;
+  font-size: var(--lemu-type-size-200);
+  transition: color var(--lemu-duration-fast) var(--lemu-ease-out);
+}
+
+.footerLink:hover {
+  color: var(--lemu-color-font-primary);
+}
+
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lemu-gap-3);
+  padding-top: var(--lemu-space-600);
+  border-top: var(--lemu-stroke-default) solid var(--lemu-color-border-subtle);
+  font-size: var(--lemu-type-size-100);
+  color: var(--lemu-color-font-muted);
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--lemu-gap-3);
+}
+
+.socialIcon {
+  color: var(--lemu-color-font-secondary);
+  transition: color var(--lemu-duration-fast) var(--lemu-ease-out);
+}
+
+.socialIcon:hover {
+  color: var(--lemu-color-brand-lime);
+}

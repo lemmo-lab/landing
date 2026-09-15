@@ -1,0 +1,106 @@
+@import '../styles/tokens.css';
+@import '../styles/fonts.css';
+@import '../styles/typography-base.css';
+
+/* ------------------------------------------------------------------
+   Landing globals — layout/base only. All values from --lemu-* tokens.
+   Component styles live in co-located *.module.css (STYLEGUIDE §5).
+   ------------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--lemu-color-page-primary);
+  color: var(--lemu-color-font-primary);
+  font-family: var(--font-body);
+  font-size: var(--lemu-type-size-200);
+  line-height: var(--lemu-type-leading-700);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--lemu-font-weight-semi-bold);
+  letter-spacing: var(--lemu-type-track-heading);
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:focus-visible {
+  outline: var(--lemu-stroke-medium) solid var(--lemu-color-brand-lime);
+  outline-offset: var(--lemu-space-050);
+  border-radius: var(--lemu-radius-050);
+}
+
+::selection {
+  background: var(--lemu-color-surface-brand);
+  color: var(--lemu-color-font-on-brand);
+}
+
+/* Skip link for keyboard users */
+.skipLink {
+  position: absolute;
+  top: calc(var(--lemu-space-200) * -1);
+  left: var(--lemu-space-400);
+  padding: var(--lemu-space-200) var(--lemu-space-400);
+  background: var(--lemu-color-surface-brand);
+  color: var(--lemu-color-font-on-brand);
+  border-radius: var(--lemu-radius-control);
+  font-weight: var(--lemu-font-weight-semi-bold);
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform var(--lemu-duration-fast) var(--lemu-ease-out);
+  z-index: 100;
+}
+
+.skipLink:focus-visible {
+  transform: translateY(var(--lemu-space-400));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

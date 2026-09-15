@@ -1,0 +1,47 @@
+/* ------------------------------------------------------------------
+   Typography base — automatic font switching by language.
+
+   THE RULE: font selection is driven by the [lang] attribute ONLY.
+   Components must never branch on language to pick a font.
+   ------------------------------------------------------------------ */
+
+:root {
+  --font-heading: 'Oddval', 'Satoshi', sans-serif;
+  --font-body: 'Satoshi', sans-serif;
+  --font-numeric: 'Satoshi', sans-serif;
+
+  /* line-height corrective factor for Persian glyphs (diacritics).
+     Persian fonts need ~10–15% more leading than their Latin peers. */
+  --leading-factor: 1;
+}
+
+[lang='fa'] {
+  --font-heading: 'Morabba', sans-serif;
+  --font-body: 'IRANSans', sans-serif;
+  --leading-factor: 1.15;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[class*='heading'] {
+  font-family: var(--font-heading);
+}
+
+/* Numbers always render in Satoshi (LTR + isolated), even inside
+   a Persian/RTL sentence. Add data-numeric to ANY numeric element:
+   price, counter, date, time, statistic, etc. */
+.tabular-nums,
+[data-numeric] {
+  font-family: var(--font-numeric);
+  font-feature-settings: 'tnum' 1;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
