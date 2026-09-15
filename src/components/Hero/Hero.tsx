@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Top Spacer / Tag */}
-      <div style={{ zIndex: 1, marginTop: 'var(--lemmo-space-400, 1rem)' }}>
+      <div className={styles.tagBadgeWrapper}>
         <div className={styles.tagBadge}>
           <span className={styles.badgeDot} />
           <span>All-New LEMMO 2.0 Studio Series</span>
