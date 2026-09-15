@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './UseCases.module.css';
 import { UseCase } from './UseCase';
+import { Flash, Refresh01, Globe02, LayersTwo } from 'synthline/react';
 
 export const UseCases: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ export const UseCases: React.FC = () => {
           placeholderId="usecase-01"
           tags={['MVP', 'RapidPrototyping', 'ProductVelocity']}
           type="canvas"
+          icon={<Flash size={22} strokeWidth={1.5} />}
         />
 
         <UseCase
@@ -33,6 +35,7 @@ export const UseCases: React.FC = () => {
           placeholderId="usecase-02"
           tags={['DesignTokens', 'SingleSourceOfTruth', 'DesignEngineering']}
           type="interactive"
+          icon={<Refresh01 size={22} strokeWidth={1.5} />}
         />
 
         <UseCase
@@ -42,6 +45,7 @@ export const UseCases: React.FC = () => {
           placeholderId="usecase-03"
           tags={['MultiTheme', 'Internationalization', 'RTLReady']}
           type="canvas"
+          icon={<Globe02 size={22} strokeWidth={1.5} />}
         />
 
         <UseCase
@@ -51,6 +55,7 @@ export const UseCases: React.FC = () => {
           placeholderId="usecase-04"
           tags={['Accessibility', 'WCAG-AA', 'MicroInteractions']}
           type="video"
+          icon={<LayersTwo size={22} strokeWidth={1.5} />}
         />
       </div>
     </section>

@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './FinalCTA.module.css';
 import { MediaPlaceholder } from '@/components/MediaPlaceholder/MediaPlaceholder';
+import { Flash, ArrowRight } from 'synthline/react';
 
 export const FinalCTA: React.FC = () => {
   return (
     <section id="cta" className={styles.section} aria-labelledby="final-cta-title">
       <div className={styles.ctaCard}>
         <div className={styles.badge}>
-          <span>⚡ No Scaffolding Required</span>
+          <Flash size={14} strokeWidth={1.5} style={{ color: 'var(--lemu-color-brand-lime)' }} />
+          <span>No Scaffolding Required</span>
         </div>
 
         <h2 id="final-cta-title" className={styles.title}>
@@ -22,10 +24,7 @@ export const FinalCTA: React.FC = () => {
         <div className={styles.actionsRow}>
           <a href="#hero" className={styles.primaryBtn}>
             <span>Start Building Free</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <ArrowRight size={16} strokeWidth={1.5} />
           </a>
 
           <a href="#showcase" className={styles.secondaryBtn}>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './Hero.module.css';
+import { ArrowRight, AiMagicWand01, CheckCircle01, Flash } from 'synthline/react';
 
 const SAMPLE_PROMPTS = [
   'Fintech analytics dashboard with dark theme & live telemetry cards',
@@ -93,19 +94,9 @@ export const HeroPrompt: React.FC = () => {
             title="Generate UI"
           >
             {status === 'generating' ? (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="spin">
-                <line x1="12" y1="2" x2="12" y2="6"></line>
-                <line x1="12" y1="18" x2="12" y2="22"></line>
-                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
-                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
-                <line x1="2" y1="12" x2="6" y2="12"></line>
-                <line x1="18" y1="12" x2="22" y2="12"></line>
-              </svg>
+              <AiMagicWand01 size={20} strokeWidth={1.5} className="spin" />
             ) : (
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+              <ArrowRight size={20} strokeWidth={1.5} />
             )}
           </button>
         </div>
@@ -131,7 +122,9 @@ export const HeroPrompt: React.FC = () => {
       {/* Generating State */}
       {status === 'generating' && (
         <div className={styles.processingTicker}>
-          <span>⚡ {steps[stepIndex]}</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <Flash size={14} strokeWidth={1.5} /> {steps[stepIndex]}
+          </span>
           <span style={{ color: 'var(--lemu-color-font-muted)' }}>
             {stepIndex + 1}/{steps.length}
           </span>
@@ -142,7 +135,7 @@ export const HeroPrompt: React.FC = () => {
       {status === 'completed' && (
         <div className={styles.resultBar}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span style={{ color: 'var(--lemu-color-brand-lime)' }}>✔</span>
+            <CheckCircle01 size={18} strokeWidth={1.5} style={{ color: 'var(--lemu-color-brand-lime)' }} />
             <span style={{ color: 'var(--lemu-color-font-primary)', fontWeight: 500 }}>
               UI Components Compiled & Injected into Canvas Preview below!
             </span>

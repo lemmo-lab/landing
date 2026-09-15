@@ -9,6 +9,7 @@ interface UseCaseProps {
   placeholderId: string;
   tags: string[];
   type?: 'interactive' | 'video' | 'canvas' | 'image';
+  icon?: React.ReactNode;
 }
 
 export const UseCase: React.FC<UseCaseProps> = ({
@@ -18,11 +19,15 @@ export const UseCase: React.FC<UseCaseProps> = ({
   placeholderId,
   tags,
   type = 'interactive',
+  icon,
 }) => {
   return (
     <article className={styles.useCaseCard} aria-labelledby={`usecase-title-${number}`}>
       <div className={styles.contentSide}>
-        <span className={styles.caseNumber}>{number}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {icon && <span style={{ color: 'var(--lemu-color-brand-lime)' }}>{icon}</span>}
+          <span className={styles.caseNumber}>{number}</span>
+        </div>
         <h3 id={`usecase-title-${number}`} className={styles.caseTitle}>{title}</h3>
         <p className={styles.caseDesc}>{description}</p>
         <div className={styles.tagsRow}>

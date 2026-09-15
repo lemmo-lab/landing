@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styles from './ProductDemo.module.css';
 import { MediaPlaceholder } from '@/components/MediaPlaceholder/MediaPlaceholder';
+import { ArrowLeft, ArrowRight, Layout01, AiMagicWand01, CodeBrowser } from 'synthline/react';
 
 interface StepData {
   id: string;
@@ -11,6 +12,7 @@ interface StepData {
   description: string;
   placeholderId: string;
   type: 'interactive' | 'video' | 'canvas';
+  icon: React.ReactNode;
 }
 
 const STEPS: StepData[] = [
@@ -21,6 +23,7 @@ const STEPS: StepData[] = [
     description: 'Enter your requirements in natural language or import a schema. Lemmo extracts semantic tokens, roles, and constraints.',
     placeholderId: 'demo-input',
     type: 'interactive',
+    icon: <Layout01 size={14} strokeWidth={1.5} />,
   },
   {
     id: 'processing',
@@ -29,6 +32,7 @@ const STEPS: StepData[] = [
     description: 'The neural layout engine resolves visual hierarchy, binds CSS variables, and maps interactive component states.',
     placeholderId: 'demo-generation',
     type: 'video',
+    icon: <AiMagicWand01 size={14} strokeWidth={1.5} />,
   },
   {
     id: 'result',
@@ -37,6 +41,7 @@ const STEPS: StepData[] = [
     description: 'Inspect live DOM trees, copy production-ready React code, and verify WCAG 2.1 AA accessibility contracts.',
     placeholderId: 'demo-result',
     type: 'canvas',
+    icon: <CodeBrowser size={14} strokeWidth={1.5} />,
   },
 ];
 
@@ -68,6 +73,7 @@ export const ProductDemo: React.FC = () => {
             className={`${styles.stepTab} ${activeStep === idx ? styles.active : ''}`}
             onClick={() => setActiveStep(idx)}
           >
+            {step.icon}
             <span className={styles.stepBadge}>{step.stepNum}</span>
             <span>{step.title}</span>
           </button>
@@ -103,8 +109,10 @@ export const ProductDemo: React.FC = () => {
             className={styles.navStepBtn}
             disabled={activeStep === 0}
             onClick={() => setActiveStep((prev) => Math.max(0, prev - 1))}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
           >
-            ← Previous Step
+            <ArrowLeft size={16} strokeWidth={1.5} />
+            <span>Previous Step</span>
           </button>
           <span style={{ fontSize: '0.875rem', color: 'var(--lemu-color-font-muted)' }}>
             Step {activeStep + 1} of {STEPS.length}
@@ -114,8 +122,10 @@ export const ProductDemo: React.FC = () => {
             className={styles.navStepBtn}
             disabled={activeStep === STEPS.length - 1}
             onClick={() => setActiveStep((prev) => Math.min(STEPS.length - 1, prev + 1))}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
           >
-            Next Step →
+            <span>Next Step</span>
+            <ArrowRight size={16} strokeWidth={1.5} />
           </button>
         </div>
       </div>

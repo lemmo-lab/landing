@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './SocialProof.module.css';
+import { Flash } from 'synthline/react';
 
 const PARTNER_LOGOS = [
   'Vercel',
@@ -55,7 +56,7 @@ export const SocialProof: React.FC = () => {
       <div className={styles.logosGrid} aria-label="Partner Companies">
         {PARTNER_LOGOS.map((company, idx) => (
           <div key={idx} className={styles.logoBadge}>
-            <span style={{ color: 'var(--lemu-color-brand-lime)' }}>⚡</span>
+            <Flash size={14} strokeWidth={1.5} style={{ color: 'var(--lemu-color-brand-lime)' }} />
             <span>{company}</span>
           </div>
         ))}

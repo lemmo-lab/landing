@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './ProductShowcase.module.css';
 import { MediaPlaceholder } from '@/components/MediaPlaceholder/MediaPlaceholder';
+import { Flash, Check01, LayersTwo, ColorPalette, CheckCircle01 } from 'synthline/react';
 
 export const ProductShowcase: React.FC = () => {
   return (
@@ -30,14 +31,27 @@ export const ProductShowcase: React.FC = () => {
 
           {/* Caption & Specs Bar */}
           <div className={styles.captionBar}>
-            <span className={styles.captionText}>
-              ⚡ Live Canvas: Token bindings, interactive state debugger, and one-click code export.
+            <span className={styles.captionText} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <Flash size={16} strokeWidth={1.5} style={{ color: 'var(--lemu-color-brand-lime)' }} />
+              <span>Live Canvas: Token bindings, interactive state debugger, and one-click code export.</span>
             </span>
             <div className={styles.featuresGrid}>
-              <span className={styles.featureBadge}>✔ 100% Token-Driven</span>
-              <span className={styles.featureBadge}>✔ Zero Runtime CSS Overhead</span>
-              <span className={styles.featureBadge}>✔ Multi-Theme Ready</span>
-              <span className={styles.featureBadge}>✔ WCAG AA Certified</span>
+              <span className={styles.featureBadge}>
+                <Check01 size={13} strokeWidth={1.5} style={{ color: 'var(--lemu-color-brand-lime)' }} />
+                <span>100% Token-Driven</span>
+              </span>
+              <span className={styles.featureBadge}>
+                <LayersTwo size={13} strokeWidth={1.5} />
+                <span>Zero Runtime CSS Overhead</span>
+              </span>
+              <span className={styles.featureBadge}>
+                <ColorPalette size={13} strokeWidth={1.5} />
+                <span>Multi-Theme Ready</span>
+              </span>
+              <span className={styles.featureBadge}>
+                <CheckCircle01 size={13} strokeWidth={1.5} style={{ color: 'var(--lemu-color-brand-lime)' }} />
+                <span>WCAG AA Certified</span>
+              </span>
             </div>
           </div>
         </div>

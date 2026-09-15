@@ -55,7 +55,8 @@
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: var(--lemu-font-weight-bold);
   color: var(--lemu-color-font-primary);
-  line-height: 1.15;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   margin-bottom: var(--lemu-space-300);
   text-wrap: balance;
 }

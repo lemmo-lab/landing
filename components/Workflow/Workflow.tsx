@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Workflow.module.css';
 import { WorkflowStep } from './WorkflowStep';
+import { PenTool01, AiCpu, Sliders01 } from 'synthline/react';
 
 export const Workflow: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ export const Workflow: React.FC = () => {
           description="Enter your requirements in natural language or supply data models. The AI maps design tokens, layouts, and constraints."
           placeholderId="workflow-describe"
           type="interactive"
+          icon={<PenTool01 size={20} strokeWidth={1.5} />}
         />
 
         <WorkflowStep
@@ -31,6 +33,7 @@ export const Workflow: React.FC = () => {
           description="AI creates responsive, accessible React components with clean CSS variables and semantic HTML structure."
           placeholderId="workflow-generate"
           type="video"
+          icon={<AiCpu size={20} strokeWidth={1.5} />}
         />
 
         <WorkflowStep
@@ -39,6 +42,7 @@ export const Workflow: React.FC = () => {
           description="Directly tweak typography, theme colors, and layout in the live visual canvas, then export production code."
           placeholderId="workflow-refine"
           type="canvas"
+          icon={<Sliders01 size={20} strokeWidth={1.5} />}
         />
       </div>
     </section>

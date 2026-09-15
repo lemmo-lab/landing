@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './BeforeAfter.module.css';
 import { MediaPlaceholder } from '@/components/MediaPlaceholder/MediaPlaceholder';
+import { X01, Check01 } from 'synthline/react';
 
 export const BeforeAfter: React.FC = () => {
   return (
@@ -20,7 +21,10 @@ export const BeforeAfter: React.FC = () => {
         {/* BEFORE CARD */}
         <div className={styles.beforeCard}>
           <div className={styles.cardHeader}>
-            <span className={styles.statusTagDanger}>✕ BEFORE LEMMO</span>
+            <span className={styles.statusTagDanger}>
+              <X01 size={14} strokeWidth={2} />
+              <span>BEFORE LEMMO</span>
+            </span>
             <span style={{ fontSize: '0.8125rem', color: 'var(--lemu-color-font-muted)' }}>2–4 Weeks</span>
           </div>
 
@@ -34,15 +38,15 @@ export const BeforeAfter: React.FC = () => {
 
           <ul className={styles.bulletList}>
             <li className={styles.bulletItemDanger}>
-              <span style={{ color: '#ff5462' }}>✕</span>
+              <X01 size={16} strokeWidth={2} style={{ color: '#ff5462' }} />
               <span>Manual token maintenance across multiple tools</span>
             </li>
             <li className={styles.bulletItemDanger}>
-              <span style={{ color: '#ff5462' }}>✕</span>
+              <X01 size={16} strokeWidth={2} style={{ color: '#ff5462' }} />
               <span>Broken responsive layouts discovered only during QA</span>
             </li>
             <li className={styles.bulletItemDanger}>
-              <span style={{ color: '#ff5462' }}>✕</span>
+              <X01 size={16} strokeWidth={2} style={{ color: '#ff5462' }} />
               <span>No automated WCAG contrast validation</span>
             </li>
           </ul>
@@ -59,7 +63,10 @@ export const BeforeAfter: React.FC = () => {
         {/* AFTER CARD */}
         <div className={styles.afterCard}>
           <div className={styles.cardHeader}>
-            <span className={styles.statusTagSuccess}>✔ WITH LEMMO AI</span>
+            <span className={styles.statusTagSuccess}>
+              <Check01 size={14} strokeWidth={2} />
+              <span>WITH LEMMO AI</span>
+            </span>
             <span style={{ fontSize: '0.8125rem', color: 'var(--lemu-color-brand-lime)', fontWeight: 'bold' }}>&lt; 60 Seconds</span>
           </div>
 
@@ -73,15 +80,15 @@ export const BeforeAfter: React.FC = () => {
 
           <ul className={styles.bulletList}>
             <li className={styles.bulletItemSuccess}>
-              <span style={{ color: 'var(--lemu-color-brand-lime)' }}>✔</span>
+              <Check01 size={16} strokeWidth={2} style={{ color: 'var(--lemu-color-brand-lime)' }} />
               <span>Zero design drift: backed directly by CSS variables</span>
             </li>
             <li className={styles.bulletItemSuccess}>
-              <span style={{ color: 'var(--lemu-color-brand-lime)' }}>✔</span>
+              <Check01 size={16} strokeWidth={2} style={{ color: 'var(--lemu-color-brand-lime)' }} />
               <span>Bilingual LTR/RTL support without broken cursive tracking</span>
             </li>
             <li className={styles.bulletItemSuccess}>
-              <span style={{ color: 'var(--lemu-color-brand-lime)' }}>✔</span>
+              <Check01 size={16} strokeWidth={2} style={{ color: 'var(--lemu-color-brand-lime)' }} />
               <span>Instant WCAG 2.1 AA verification and live dark theme</span>
             </li>
           </ul>

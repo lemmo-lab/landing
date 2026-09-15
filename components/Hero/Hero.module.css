@@ -58,13 +58,14 @@
 
 .headline {
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-size: clamp(1.85rem, 6vw, 4.25rem);
   font-weight: var(--lemu-font-weight-bold);
-  line-height: 1.08;
-  letter-spacing: var(--lemu-type-track-heading);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
   color: var(--lemu-color-font-primary);
   margin-bottom: var(--lemu-space-400);
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .headlineHighlight {
@@ -74,7 +75,7 @@
 }
 
 .description {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
   color: var(--lemu-color-font-secondary);
   line-height: 1.5;
   max-width: 680px;
@@ -83,10 +84,17 @@
 
 .ctaGroup {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
   gap: var(--lemu-gap-3);
   margin-bottom: var(--lemu-space-800);
+}
+
+@media (min-width: 640px) {
+  .ctaGroup {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 .primaryCta {
@@ -96,13 +104,14 @@
   font-family: var(--font-body);
   font-size: var(--lemu-type-size-300);
   font-weight: var(--lemu-font-weight-semi-bold);
-  padding: var(--lemu-space-250) var(--lemu-space-600);
+  padding: var(--lemu-space-250) var(--lemu-space-500);
   border-radius: var(--lemu-radius-control);
   cursor: pointer;
   box-shadow: var(--lemu-shadow-button-brand-inset);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--lemu-gap-2);
   transition: all var(--lemu-duration-fast) var(--lemu-ease-out);
 }
@@ -126,6 +135,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--lemu-gap-2);
   transition: all var(--lemu-duration-fast) var(--lemu-ease-out);
 }

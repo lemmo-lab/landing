@@ -8,6 +8,7 @@ interface WorkflowStepProps {
   description: string;
   placeholderId: string;
   type?: 'interactive' | 'video' | 'canvas';
+  icon?: React.ReactNode;
 }
 
 export const WorkflowStep: React.FC<WorkflowStepProps> = ({
@@ -16,11 +17,15 @@ export const WorkflowStep: React.FC<WorkflowStepProps> = ({
   description,
   placeholderId,
   type = 'interactive',
+  icon,
 }) => {
   return (
     <div className={styles.stepCard}>
       <div className={styles.stepTop}>
-        <span className={styles.stepNumber}>{number}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {icon && <span style={{ color: 'var(--lemu-color-brand-lime)' }}>{icon}</span>}
+          <span className={styles.stepNumber}>{number}</span>
+        </div>
         <span className={styles.stepIndicator}>Stage {number}</span>
       </div>
 

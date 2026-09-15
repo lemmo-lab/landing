@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
+import { LemmoMark } from '@/components/icons/LemmoLogo';
+import { ArrowRight, Menu02, X01 } from 'synthline/react';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,9 +27,9 @@ export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.navContainer}>
-        {/* Brand Logo */}
+        {/* Brand Logo with LemmoMark (3 circles constellation) */}
         <a href="#hero" className={styles.logoLink} onClick={closeMenu}>
-          <div className={styles.logoIcon}>L</div>
+          <LemmoMark size={28} style={{ color: 'var(--lemu-color-brand-lime)' }} />
           <span>Lemmo</span>
         </a>
 
@@ -45,10 +47,7 @@ export const Header: React.FC = () => {
           <button type="button" className={styles.loginBtn}>Log In</button>
           <a href="#cta" className={styles.ctaBtn}>
             <span>Start Building</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+            <ArrowRight size={14} strokeWidth={1.5} />
           </a>
         </div>
 
@@ -62,16 +61,9 @@ export const Header: React.FC = () => {
           aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         >
           {mobileMenuOpen ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+            <X01 size={20} strokeWidth={1.5} />
           ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
+            <Menu02 size={20} strokeWidth={1.5} />
           )}
         </button>
       </div>

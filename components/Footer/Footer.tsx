@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import { LemmoMark } from '@/components/icons/LemmoLogo';
 
 export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.footerContainer}>
         <div className={styles.topGrid}>
-          {/* Brand Col */}
+          {/* Brand Col with official LemmoMark */}
           <div className={styles.brandCol}>
             <a href="#hero" className={styles.brandLogo}>
-              <div className={styles.brandIcon}>L</div>
+              <LemmoMark size={28} style={{ color: 'var(--lemu-color-brand-lime)' }} />
               <span>Lemmo AI</span>
             </a>
             <p className={styles.brandMotto}>
